@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+.contenedor {
+    width: 96%;
+    max-width: 1800px;
+    margin: 20px auto;
+}
+
+header {
+    background: #1f2937;
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+}
+
+header p {
+    margin: 0;
+}
+
+.barra-superior {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+#buscador {
+    flex: 1;
+    min-width: 300px;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.barra-superior button {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #2563eb;
+    color: white;
+}
+
+.barra-superior button:hover {
+    opacity: 0.9;
+}
+
+.resumen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.tarjeta {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.tarjeta span {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.tarjeta strong {
+    font-size: 28px;
+}
+
+.tabla-contenedor {
+    background: white;
+    border-radius: 10px;
+    overflow: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1200px;
+}
+
+th {
+    background: #1f2937;
+    color: white;
+    padding: 14px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    vertical-align: top;
+}
+
+tr:hover {
+    background: #f9fafb;
+}
+
+.seccion-titulo {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.botones-estado {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.btn-estado {
+    border: none;
+    border-radius: 6px;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-quiero {
+    background: #22c55e;
+    color: white;
+}
+
+.btn-no-quiero {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-mandado {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-pendiente-bodega {
+    background: #f59e0b;
+    color: white;
+}
+
+.btn-llego {
+    background: #16a34a;
+    color: white;
+}
+
+.btn-no-llego {
+    background: #dc2626;
+    color: white;
+}
+
+.estado-actual {
+    display: block;
+    margin: 10px 0;
+    padding: 6px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.estado-Pendiente {
+    background: #e5e7eb;
+}
+
+.estado-Quiero {
+    background: #bbf7d0;
+}
+
+.estado-NoQuiero {
+    background: #fecaca;
+}
+
+.estado-PendienteBodega {
+    background: #fde68a;
+}
+
+.estado-Mandado {
+    background: #bfdbfe;
+}
+
+.estado-NoLlego {
+    background: #fecaca;
+}
+
+.estado-Llego {
+    background: #bbf7d0;
+}
+
+.cantidad-titulo {
+    display: block;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.control-cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-cantidad {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    background: #374151;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.numero-cantidad {
+    min-width: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sin-resultados {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    font-size: 18px;
+    color: #666;
+}
+
+@media (max-width: 800px) {
+
+    .resumen {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contenedor {
+        width: 98%;
+    }
+
+}
