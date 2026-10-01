@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BODEGA</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXWPSivYuKEi86JZZ9hkIJstwM0Ut6rnwk5bV2epV8dEhOyHxeqbYFK6A&s=10"
+    >
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <header>
+            <h1>📦 PRODUCTOS DE BODEGA</h1>
+            <p>CONTROL DE PRODUCTOS</p>
+        </header>
+
+
+        <div class="barra-superior">
+
+            <input
+                type="text"
+                id="buscador"
+                placeholder="🔎 Buscar por código, código de barras o descripción..."
+            >
+
+
+            <button
+                type="button"
+                onclick="exportarExcel()"
+            >
+                📊 Exportar a Excel
+            </button>
+
+
+            <button
+                type="button"
+                onclick="cargarProductosIniciales()"
+            >
+                🔄 Cargar productos
+            </button>
+
+        </div>
+
+
+        <!-- NOMBRE DE LA TIENDA -->
+
+        <div class="campo-tienda">
+
+            <label for="nombreTienda">
+                🏪 Nombre de la tienda
+            </label>
+
+            <input
+                type="text"
+                id="nombreTienda"
+                placeholder=""
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <div class="resumen">
+
+            <div class="tarjeta">
+                <span>Total</span>
+                <strong id="totalProductos">0</strong>
+            </div>
+
+
+            <div class="tarjeta quiero">
+                <span>Quiero</span>
+                <strong id="totalQuiero">0</strong>
+            </div>
+
+
+            <div class="tarjeta no-quiero">
+                <span>No quiero</span>
+                <strong id="totalNoQuiero">0</strong>
+            </div>
+
+
+            <div class="tarjeta pendiente">
+                <span>Pendientes</span>
+                <strong id="totalPendiente">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="tabla-contenedor">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>#</th>
+                        <th>CÓDIGO</th>
+                        <th>CÓDIGO DE BARRAS</th>
+                        <th>DESCRIPCIÓN</th>
+                        <th>PEDIDO</th>
+                        <th>BODEGA</th>
+                        <th>RECIBIDO</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="tablaProductos"></tbody>
+
+            </table>
+
+        </div>
+
+
+        <div
+            id="sinResultados"
+            class="sin-resultados"
+        >
+            No se encontraron productos.
+        </div>
+
+    </div>
+
+
+    <!-- BOTÓN ENVIAR PEDIDO -->
+
+    <button
+        type="button"
+        onclick="enviarPedido()"
+        style="
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            z-index: 9999;
+            padding: 15px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+        "
+    >
+        📤 ENVIAR PEDIDO
+    </button>
+
+
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+
+    <script src="productos.js"></script>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
